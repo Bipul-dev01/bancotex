@@ -261,10 +261,10 @@ header ul li a:hover{
   justify-content: center;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to left top, #031A9A, #8B53FF);
+  /* background: linear-gradient(to left top, #031A9A, #8B53FF); */
 }
 .wrapper {
-  max-width: 1200px;
+  max-width: 1300px;
   width: 100%;
   position: relative;
   padding-bottom: 70px;
@@ -306,10 +306,10 @@ header ul li a:hover{
 .wrapper .carousel{
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 3) - 12px);
+  grid-auto-columns: calc((100% / 4) - 12px);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 16px;
+  gap: 15px;
   border-radius: 8px;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -335,7 +335,7 @@ header ul li a:hover{
 }
 .carousel .card {
   scroll-snap-align: start;
-  height: 430px;
+  height: 530px;
   list-style: none;
   background: #fff;
   cursor: pointer;
@@ -344,23 +344,37 @@ header ul li a:hover{
   border-radius: 8px;
 }
 .carousel .card .img {
-  background: #8B53FF;
-  height: 250px;
+  /* background: #8B53FF; */
+  height: 380px;
   width: 300px;
 }
 .card .img img {
   width: 320px;
-  height: 280px;
+  height: 380px;
   object-fit: cover;
   /* border: 4px solid #fff; */
-  border: 4px solid #8B53FF;
+  /* border: 4px solid #8B53FF; */
   
 }
 .carousel .card h2 {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 22px;
-  margin: 40px 0 5px;
+  font-size: 18px;
+  margin: 35px 0 5px;
+}
+.carousel .card h4 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #999;
+  margin: 1px 0 3px;
+}
+.carousel .card h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #111;
+  margin: 5px 0 3px;
 }
 .carousel .card span {
   color: #6A6D78;
