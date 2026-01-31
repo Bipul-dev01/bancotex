@@ -390,6 +390,129 @@ header ul li a:hover{
     grid-auto-columns: 100%;
   }
 }
+
+/* Shop by Categories CSS Start */
+/* ===============================
+   Shop by Categories Section
+================================ */
+
+.shop-by-categories {
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+/* Title */
+.shop-by-categories h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.shop-by-categories h2 span {
+  color: #c7ad82; /* "Shop by" light color */
+}
+
+.shop-by-categories h2 strong {
+  color: #000; /* "Categories" black */
+}
+
+/* ===============================
+   Grid Layout
+================================ */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px; /* very small gap */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   Card Design
+================================ */
+
+.category-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.category-card img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+}
+
+/* ===============================
+   Hover Glow Effect
+================================ */
+
+.category-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  box-shadow: 0 0 0 rgba(199, 173, 130, 0.0);
+  transition: box-shadow 0.35s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.category-card:hover::after {
+  box-shadow: 
+    0 0 18px rgba(199, 173, 130, 0.6),
+    0 0 35px rgba(199, 173, 130, 0.4);
+}
+
+/* ===============================
+   7th Item Center Fix
+================================ */
+
+.category-card:nth-child(7) {
+  grid-column: 2 / span 1;
+}
+
+/* ===============================
+   Responsive Design
+================================ */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card img {
+    height: 240px;
+  }
+
+  .category-card:nth-child(7) {
+    grid-column: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card img {
+    height: 220px;
+  }
+}
+
+/* Shop by Categories CSS End */
+
+
+
 /* E-commerce products css starts */
 
 /* Container */
@@ -883,180 +1006,44 @@ header ul li a:hover{
 
 /* Another Products CSS End */
 
-/* *********************************************************  
-    Styling Contact Us 
-********************************************************* */
-.text-animation{
-  position: relative;
-  width: 90%;
-  margin: 0 auto;
-  height: 200px;
-  padding: 100px;
-  background: url("./images/hockenheim-switchyard-transformer.jpg") center;
-  /* background-repeat: no-repeat; */
-  object-fit: cover;
-  margin-top: 80px;
-  margin-bottom: -50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* **********************************************************
+    Contact Us Page Map CSS Start
+********************************************************** */
+.map {
+  width: 100%;
+  height: 80vh;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-action {
   text-align: center;
-  justify-content: center; 
-  /* box-shadow: 0 0 15px rgba(7, 7, 7, 0.9); */
+  margin: 20px 0;
 }
-.text-animation .infinity-text{
-  position: absolute;
-  width: 100%;
-  /* padding: 50px; */
-}
-.text-animation .infinity-text h1{
-  font-size: 120px;
-  line-height: 165px;
-  padding: 15px;
-  background: url('./images/back-animation.png');
-  letter-spacing: 5px;
-  color: transparent;
-  -webkit-text-stroke: 2px #912121; 
-  -webkit-background-clip: text;
-  background-position: 0 0;
-  animation: back 10s linear infinite;   
-}
-@keyframes back{
-    100%{
-        background-position: 2000px 0;
-    }
-}
-/* Contact Us Page Styling  */
-#contactUs {
-  position: relative;
-  width: 100%;
-  padding: 40px 100px;
-  margin-top: 60px;
-  min-height: 100vh;
-  /* max-height: 160vh; */
-  background: linear-gradient(90deg, #0e3959 0%, #0e3959 30%, #03a9f5 30%, #03a9f5 100%);
-  margin-top: 115px; }
-#contactUs .titleContact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Poppins', sans-serif; 
-}
-#contactUs .titleContact h2 {
-  color: #fff;
-  font-size: 3em;
-  font-weight: 500; }
-#contactUs .boxContact .formc p{
-  font-size: 1rem;
-  /* padding: 50px; */
-}
-.formc{
-  /* height: 870px; */
-}
-.contactt:hover{
-  box-shadow: 0 5px 35px rgba(246, 246, 244, 0.5);
-}
-.contactt .imagec {
-  display: flex;
-  justify-content: center;
-   align-items: center;
-  max-width: 150px;
-  margin: 50px auto;
-}
-.contactt .imagec img{
-   /* position: relative; */
-   width: 690px;
-   height: 280px;
-   margin-bottom: 20px;
-}
-.formc {
-  grid-area: formc; }
-.infoc {
-  grid-area: infoc; }
-.mapc {
-  grid-area: mapc; }
-.contactt {
-  padding: 40px;
-  background: #fff;
-  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.5); }
-.boxContact {
-  position: relative;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 5fr 4fr;
-  grid-template-areas: "formc infoc"
- "formc mapc";
-  grid-gap: 20px;
-  margin-top: 20px; }
-.boxContact .formc h3{
-  color: green;
-  font-size: 38px;
-  text-shadow: 2px 2px #3a3535;
-}
-.boxContact .formc h1{
-  font-size: 30px;
-  margin-top: -18px;
-  color: #13767f;
-}
-.contactt h3 {
-  color: #0e3959;
-  font-weight: 500;
-  font-size: 1.8em;
-  margin-top: 20px;
-  margin-bottom: 25px; }
-.infoc {
-  background: #0e3959; }
-.infoc h3 {
-  color: #fff; }
-.infoc .infoBox div {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px; }
-.infoc .infoBox div span {
-  min-width: 40px;
-  height: 40px;
-  color: #fff;
-  background: #18b7ff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  border-radius: 50%;
-  margin-right: 15px; }
-.infoc .infoBox div p {
-  color: #fff;
-  font-size: 1.1em; 
-  /* font-family: 'Poppins', sans-serif; */
-}
-.infoc .infoBox div a {
+
+.open-map-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #000;
   color: #fff;
   text-decoration: none;
-  font-size: 1.1em; }
-.sml {
-  margin-top: 50px;
-  display: flex; }
-.sml li {
-  list-style: none;
-  margin-right: 15px; }
-.sml li a {
-  color: #fff;
-  font-size: 2em;
-  color: #ccc; }
-.sml li a:hover {
-  color: #f30bad; }
-.mapc {
-  position: relative;
-  padding: 0; 
-  /* height: 372px; */
-  height: 405px;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
-.mapc iframe {
-  width: 100%;
-  height: 100%; }
-#secFooterContact {
-  position: relative;
-  margin-top: 40px; 
+
+.open-map-btn:hover {
+  background: #444;
 }
+
+
+/* **********************************************************
+    Contact Us Page Map CSS End
+********************************************************** */
 
 /* Base Footer Styles Start */
 
