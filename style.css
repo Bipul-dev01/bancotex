@@ -758,6 +758,87 @@ header ul li a:hover{
 }
 
 
+/* Another Products CSS Start */
+
+.related-products {
+  padding: 60px 15px;
+  background: #fff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 35px;
+  font-weight: 600;
+}
+ /* Grid */
+.products-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.product-card {
+  height: 260px;  
+   aspect-ratio: 1 / 1;
+  height: auto;            /* 🔒 fixed card height */
+  background: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Image */
+.product-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  transition: transform 0.35s ease;
+}
+
+/* Hover */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-card {
+    height: 240px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card {
+    height: 220px;
+  }
+}
+
+
+/* Another Products CSS End */
+
 /* *********************************************************  
     Styling Contact Us 
 ********************************************************* */
