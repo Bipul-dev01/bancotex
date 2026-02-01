@@ -13,6 +13,10 @@ body{
     /* background: #bed7e4; */
 }
 
+:root{
+  --transition-3: 1000ms ease;
+}
+
 /* *************************************************************
     Pre loader
 ************************************************************* */
@@ -121,7 +125,7 @@ header ul li a{
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    padding: 20px 25px;
+    padding: 20px 15px;
     text-decoration: none !important;
     display: flex;
     justify-content: space-between;
@@ -960,7 +964,17 @@ header ul li a:hover{
   color: #111; /* deep color */
   font-weight: 700;
 }
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+}
 
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+  }
+}
 
  /* Grid */
 .products-grid {
@@ -1004,6 +1018,28 @@ header ul li a:hover{
 .product-card:hover img {
   transform: scale(1.12);
 }
+
+
+.hover\:shine{
+  position: relative;
+}
+.hover\:shine::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(to right, transparent 0%, rgba(232, 161, 61, 0.4) 100%);
+  transform: skewX(-0.08turn) translateX(-180%);
+}
+.hover\:shine:is(:hover, :focus-within)::after{
+  transform: skewX(-0.08turn) translateX(275%);
+  transition: var(--transition-3);
+}
+
+
+
 
 /* Tablet */
 @media (max-width: 992px) {
