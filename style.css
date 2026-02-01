@@ -424,7 +424,7 @@ header ul li a:hover{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px; /* very small gap */
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -434,7 +434,6 @@ header ul li a:hover{
 
 .category-card {
   position: relative;
-  border-radius: 18px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.35s ease;
@@ -442,10 +441,9 @@ header ul li a:hover{
 
 .category-card img {
   width: 100%;
-  height: 560px;
+  height: 500px;
   object-fit: cover;
   display: block;
-  border-radius: 18px;
 }
 
 /* ===============================
@@ -931,13 +929,39 @@ header ul li a:hover{
   padding: 60px 15px;
   background: #fff;
 }
-
 .section-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 60px;
   text-align: center;
-  font-size: 26px;
-  margin-bottom: 35px;
+  gap: 12px;
+}
+
+/* Left & Right Lines */
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: #C7AD82;
+}
+
+/* Text Styling */
+.section-title .light {
+  color: #7e7f7ff6; /* light color */
   font-weight: 600;
 }
+
+.section-title .dark {
+  color: #111; /* deep color */
+  font-weight: 700;
+}
+
+
  /* Grid */
 .products-grid {
   max-width: 1200px;
