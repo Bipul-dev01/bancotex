@@ -1,88 +1,79 @@
-// Selecting all required elements:
-
+// Selecting required elements
 const gallery = document.querySelectorAll(".gallery .image");
-//console.log(gallery);
 const previewBox = document.querySelector(".preview-box");
 const previewImg = previewBox.querySelector("img");
 const closeBtn = previewBox.querySelector(".icon");
-
 const currentImg = previewBox.querySelector(".current-img");
 const totalImg = previewBox.querySelector(".total-img");
-
 const shadow = document.querySelector(".shadow");
 
-window.onload = () =>{
-    for (let i = 0; i < gallery.length ; i++){
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
-        totalImg.textContent = gallery.length ; //Passing gallery img length to totalImg
+let newIndex = 0;
+const totalImages = gallery.length;
 
-        let newIndex = i; //Passing i value to newIndex variable
+document.addEventListener("DOMContentLoaded", () => {
+  totalImg.textContent = totalImages;
 
-        let clickImageIndex ;
+  gallery.forEach((img, index) => {
+    img.onclick = () => {
+      newIndex = index;
+      openPreview();
+    };
+  });
+});
 
-        gallery[i].onclick = () =>{
-            //console.log(i);
-            clickImageIndex = newIndex ; // Passing clicked image index to clickImageIndex variable  
+// Open preview
+function openPreview() {
+  previewBox.classList.add("show");
+  shadow.style.display = "block";
+  document.body.style.overflow = "hidden";
+  updatePreview();
+}
 
-            function preview(){
-                currentImg.textContent = newIndex + 1 // Passing newIndex value to currentImg variable by adding 1
-                let selectedImageURL = gallery[newIndex].querySelector("img").src; //Getting user clicked image URL ;
-                //console.log(selectedImageURL);
+// Update image + buttons
+function updatePreview() {
+  currentImg.textContent = newIndex + 1;
+  previewImg.src = gallery[newIndex].querySelector("img").src;
 
-                previewImg.src = selectedImageURL; //Passing user clicked image URL to previewing source
-            }
+  // Reset buttons first
+  prevBtn.style.display = "block";
+  nextBtn.style.display = "block";
 
-            // Let's work on prev & next button
+  // Hide when needed
+  if (newIndex === 0) {
+    prevBtn.style.display = "none";
+  }
+  if (newIndex === totalImages - 1) {
+    nextBtn.style.display = "none";
+  }
+}
 
-            const prevBtn = document.querySelector(".prev");
-            const nextBtn = document.querySelector(".next");
+// Prev button
+prevBtn.onclick = () => {
+  if (newIndex > 0) {
+    newIndex--;
+    updatePreview();
+  }
+};
 
-            if(newIndex == 0){
-                prevBtn.style.display = "none"; 
-            }
-            if(newIndex >= gallery.length - 1){
-                nextBtn.style.display = "none";
-            }
+// Next button
+nextBtn.onclick = () => {
+  if (newIndex < totalImages - 1) {
+    newIndex++;
+    updatePreview();
+  }
+};
 
-            prevBtn.onclick = () =>{
-                newIndex-- ; //decrement newIndex value ;
+// Close button
+closeBtn.onclick = closePreview;
 
-                if(newIndex == 0){
-                    preview();
-                    prevBtn.style.display = "none"; 
-                }else{
-                    preview(); //Calling again above function to update image
-                    prevBtn.style.display = "block";
-                }    
-            }
+// Shadow click close
+shadow.onclick = closePreview;
 
-            nextBtn.onclick = () =>{
-                newIndex++ ; //increment newIndex value ;
-
-                if(newIndex >= gallery.length - 1){
-                    preview();
-                    nextBtn.style.display = "none"; 
-                }else{
-                    preview(); //Calling again above function to update image
-                    prevBtn.style.display = "block";
-                }    
-            }
-
-            preview(); //Calling above function 
-
-            previewBox.classList.add("show");
-            shadow.style.display = "block" ;
-            document.querySelector("body").style.overflow = "hidden" ;
-
-            closeBtn.onclick = () => {
-                newIndex = clickImageIndex; // assigning user first click img index to newIndex variable
-                prevBtn.style.display = "block";
-                nextBtn.style.display = "block"; 
-                previewBox.classList.remove("show");
-                shadow.style.display = "none" ;
-                document.body.style.overflow = "auto";
-
-            }
-        }
-    }
+function closePreview() {
+  previewBox.classList.remove("show");
+  shadow.style.display = "none";
+  document.body.style.overflow = "auto";
 }
