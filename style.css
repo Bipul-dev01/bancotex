@@ -1664,7 +1664,7 @@ header ul li a:hover{
 
 
 
-/* gallery CSS Start */
+/* === Image Gallery CSS Start === */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -1802,3 +1802,4 @@ header ul li a:hover{
     background: rgba(0,0,0,0.4);
 }
 
+/* === Image Gallery CSS End === */
