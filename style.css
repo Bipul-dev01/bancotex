@@ -257,32 +257,175 @@ header ul li a:hover{
 
 /* === Slideshow / Carousel Section CSS Start === */
 
-/* Slideshow container */
+
+/* ===============================
+   SLIDESHOW CONTAINER
+================================ */
 .slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #eee;
+}
+
+/* ===============================
+   SLIDES
+================================ */
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===============================
+   PREV / NEXT BUTTONS
+================================ */
+.prevv,
+.nextt {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  padding: 14px;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+
+  color: #141439;
+  background: rgba(199, 173, 130, 0.85);
+  border-radius: 50%;
+  user-select: none;
+
+  transition: 0.3s ease;
+}
+
+.prevv { left: 12px; }
+.nextt { right: 12px; }
+
+.prevv:hover,
+.nextt:hover {
+  background: #14dc96;
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ===============================
+   DOTS (INSIDE SLIDER)
+================================ */
+.dot-section {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dot.active {
+  background: #1411be;
+  transform: scale(1.3);
+}
+
+/* ===============================
+   FADE ANIMATION
+================================ */
+.fade {
+  animation: fade 1.5s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .slideshow-container {
+    aspect-ratio: 16 / 8;
+  }
+
+  .prevv,
+  .nextt {
+    font-size: 22px;
+    padding: 12px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .slideshow-container {
+    aspect-ratio: 16 / 9;
+  }
+
+  .prevv,
+  .nextt {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+
+/* .slideshow-container {
   position: relative;
   max-width: 100%;
   margin: 20px auto;
   overflow: hidden;
-  aspect-ratio: 16 / 7; /* Maintain consistent height based on width */
+  aspect-ratio: 16 / 7; 
   border-radius: 12px;
 }
 
-/* Hide all slides by default */
+
 .mySlides {
   display: none;
 }
 
-/* Slide Images */
+
 .mySlides img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Crop image without stretching */
+  object-fit: cover; 
   display: block;
-  transition: transform 0.6s ease; /* smooth hover */
+  transition: transform 0.6s ease; 
   border-radius: 12px;
 }
 
-/* Next & Previous buttons */
+
 .prevv, .nextt {
   cursor: pointer;
   position: absolute;
@@ -308,7 +451,7 @@ header ul li a:hover{
 .prevv { left: 10px; }
 .nextt { right: 10px; }
 
-/* Dots / Indicators */
+
 .dot-section {
   text-align: center;
   padding: 15px 0 0 0;
@@ -330,7 +473,7 @@ header ul li a:hover{
   transform: scale(1.2);
 }
 
-/* Fading animation */
+
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -348,12 +491,10 @@ header ul li a:hover{
   to {opacity: 1}
 }
 
-/* Responsive Design */
 
-/* Tablets */
 @media screen and (max-width: 992px) {
   .slideshow-container {
-    aspect-ratio: 16 / 8; /* slightly taller for smaller screens */
+    aspect-ratio: 16 / 8; 
   }
   .prevv, .nextt {
     font-size: 24px;
@@ -365,10 +506,10 @@ header ul li a:hover{
   }
 }
 
-/* Mobile */
+
 @media screen and (max-width: 600px) {
   .slideshow-container {
-    aspect-ratio: 16 / 9; /* more vertical height */
+    aspect-ratio: 16 / 9; 
   }
   .prevv, .nextt {
     font-size: 20px;
@@ -381,7 +522,7 @@ header ul li a:hover{
   }
 }
 
-/* Extra Small Phones */
+
 @media screen and (max-width: 400px) {
   .prevv, .nextt {
     font-size: 18px;
@@ -394,10 +535,10 @@ header ul li a:hover{
   }
 }
 
-/* Optional: Add hover zoom effect for slides */
+
 .mySlides img:hover {
   transform: scale(1.03);
-}
+} */
 
 /* === Slideshow / Carousel Section CSS End === */
 
@@ -411,6 +552,7 @@ header ul li a:hover{
   padding: 0 20px;
   font-family: "Poppins", sans-serif;
   background: #f5f5f5; /* section background */
+  margin-top: 80px;
 }
 
 /* Wrapper */
