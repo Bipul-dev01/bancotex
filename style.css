@@ -1664,34 +1664,6 @@ header ul li a:hover{
 
 
 
-@media screen and (max-width: 480px){
-
- /* Infinite Card Slider JavaScript */
- .wrapper h1{
-    font-size: 1.4rem;
-    margin-bottom: 20px;
- }
- .wrapper i {
-    top: 50%;
-    height: 40px;
-    width: 40px;
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.wrapper i:active{
-    transform: translateY(-50%) scale(0.85);
-}
-.wrapper i:first-child{
-    left: 100px;
-}
-.wrapper i:last-child{
-    right: -5px;
-}
-
-
-
 /* gallery CSS Start */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -1708,17 +1680,11 @@ header ul li a:hover{
     min-height: 100vh;
     padding: 10px;
 }
-/* body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 10px;
-} */
-.wrapper{
+
+.slidingContaiber .wrapper{
     max-width: 1100px;
 }
-.wrapper .gallery{
+.slidingContaiber .wrapper .gallery{
     display: flex;
     flex-wrap: wrap;
 }
@@ -1732,12 +1698,12 @@ header ul li a:hover{
     width: calc(100% / 3);
     padding: 7px;
 }
-.wrapper .gallery img{
+.slidingContaiber .wrapper .gallery img{
     width: 100%;
     vertical-align: middle;
     transition: all 0.5s ease;
 }
-.wrapper .gallery .image:hover img{
+.slidingContaiber .wrapper .gallery .image:hover img{
     transform: scale(1.2);
 }
 
@@ -1836,4 +1802,3 @@ header ul li a:hover{
     background: rgba(0,0,0,0.4);
 }
 
-}
