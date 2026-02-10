@@ -802,9 +802,9 @@ header ul li a:hover{
 }
 
 /* Center last item (desktop only) */
-.category-card:nth-child(7) {
+/* .category-card:nth-child(7) {
   grid-column: 2 / span 1;
-}
+} */
 
 /* Tablet */
 @media (max-width: 992px) {
