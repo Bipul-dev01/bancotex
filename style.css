@@ -218,13 +218,16 @@ header.active .menuToggle::after {
 /* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
-    
+  
     header.navbar {
         justify-content: space-between;
     }
     header.navbar .brandName{
       margin-left: 20px;
       display: block;
+    }
+    header.navbar.changeBackgroundColor nav ul li a {
+      color: #fff;
     }
 
     .menuToggle {
@@ -247,10 +250,11 @@ header.active .menuToggle::after {
 
     header.navbar nav ul {
         flex-direction: column;
+        padding-top: 20px;
     }
 
     header.navbar nav ul li a {
-        padding: 15px 20px;
+        padding: 10px 30px;
         color: #fff;
     }
 
