@@ -37,9 +37,12 @@
 
     <!-- === Top Section Branding End === -->
 
-    <!-- Nav Section -->
+  <!-- ================= NAVBAR START ================= -->
     <header class="navbar">
-      <div class="menuToggle"></div>
+      <div class="menuToggle">
+        <span></span>
+      </div>
+
       <nav>
         <ul>
           <li class="active"><a class="navLink" href="index.html">Home</a></li>
@@ -56,14 +59,13 @@
       </nav>
     </header>
 
+   <!-- ================= NAVBAR END ================= -->
+
     <!-- === Slide/Carousel section Start === -->
     <section class="slideshow-container">
       <div class="mySlides fade">
         <!-- <div class="numbertext">1 / 3</div> -->
-        <img
-          src="images/carouselImage/panjabi.png"
-          style="width: 100%"
-        />
+        <img src="images/carouselImage/panjabi.png" style="width: 100%" />
       </div>
       <div class="mySlides fade">
         <img
@@ -82,7 +84,7 @@
       </div>
       <a class="prevv" onclick="plusSlides(-1)">&#10094;</a>
       <a class="nextt" onclick="plusSlides(1)">&#10095;</a>
-      
+
       <div class="dot-section" style="text-align: center">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
@@ -451,6 +453,9 @@
 
     <script src="index.js"></script>
 
+    <!-- Slide/Carousel Section JS Code html Code index.html below Nav -->
+    <script src="js/home.js"></script>
+
     <!-- Pre Loader -->
     <script>
       function loaderAnimation() {
@@ -461,72 +466,30 @@
       }
       loaderAnimation();
     </script>
-    <!-- Script code for Navbar menuToggle -->
-    <script>
-      let menuToggle = document.querySelector(".menuToggle");
-      let header = document.querySelector("header");
 
-      menuToggle.onclick = function () {
+
+<!-- === Navbar JS Start === -->
+    <script>
+      const header = document.querySelector("header");
+      const menuToggle = document.querySelector(".menuToggle");
+
+      /* Toggle menu */
+      menuToggle.addEventListener("click", () => {
         header.classList.toggle("active");
-      };
-    </script>
+      });
 
-    <!-- JavaScript for Scroll up Button -->
-    <script>
-      //Get the button
-      myButton = document.getElementById("myBtn");
-      navbar = document.getElementById("navbar");
-      //When the user scroll down 20px from the top of the document, show the button.
-      window.onscroll = function () {
-        scrollFunction();
-      };
-      function scrollFunction() {
-        if (
-          document.body.scrollTop > 20 ||
-          document.documentElement.scrollTop > 20
-        ) {
-          myButton.style.display = "block";
-          // navbar.style.background="#3300CC";
-          navbar.style.opacity = 0.9;
+      /* Scroll background change */
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("changeBackgroundColor");
         } else {
-          myButton.style.display = "none";
-          //    navbar.style.background="#008000";
-          navbar.style.opacity = 1;
-        }
-      }
-      //when the user clicks on the button, scroll to the top of the document
-      function topFunction() {
-        document.body.scrollTop = 0; //For Safari;
-        document.documentElement.scrollTop = 0; //For Chrome, FireFox, IE & Opera
-      }
-    </script>
-
-    <!-- ionics framework🧮  -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-
-    <!-- Carousel Slider JS Link -->
-    <script src="./carouselApp.js"></script>
-
-    <!-- Sticky Navigation Bar on Scroll using -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-    <script>
-      $(window).scroll(function () {
-        if ($(window).scrollTop()) {
-          $("header").addClass("changeBackgroundColor");
-        } else {
-          $("header").removeClass("changeBackgroundColor");
+          header.classList.remove("changeBackgroundColor");
         }
       });
     </script>
 
-    <script src="js/home.js"></script>
+<!-- === Navbar JS End === -->
+
+
   </body>
 </html>
