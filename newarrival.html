@@ -38,7 +38,7 @@
       <div class="menuToggle"></div>
       <nav>
         <ul>
-          <li class="active"><a class="navLink" href="index.html">Home</a></li> 
+          <li><a href="index.html">Home</a></li> 
           <li><a href="eidcollection.html">Eid Collection 2026</a></li>
           <li><a href="newarrival.html">New Arrival</a></li>
           <li><a href="panjabi.html">Panjabi</a></li>
@@ -2449,85 +2449,47 @@
       });
     </script>
     <!-- JS code for Accordion end -->
-
-    <script src="index.js"></script>
-
-    <!-- Pre Loader -->
-    <script>
-      function loaderAnimation() {
-        var loader = document.querySelector("#loader");
-        setTimeout(function () {
-          loader.style.top = "-100%";
-        }, 4000);
-      }
-      loaderAnimation();
-    </script>
-    <!-- Script code for Navbar menuToggle -->
-    <script>
-      let menuToggle = document.querySelector(".menuToggle");
-      let header = document.querySelector("header");
-
-      menuToggle.onclick = function () {
-        header.classList.toggle("active");
-      };
-    </script>
-
-    <!-- JavaScript for Scroll up Button -->
-    <script>
-      //Get the button
-      myButton = document.getElementById("myBtn");
-      navbar = document.getElementById("navbar");
-      //When the user scroll down 20px from the top of the document, show the button.
-      window.onscroll = function () {
-        scrollFunction();
-      };
-      function scrollFunction() {
-        if (
-          document.body.scrollTop > 20 ||
-          document.documentElement.scrollTop > 20
-        ) {
-          myButton.style.display = "block";
-          // navbar.style.background="#3300CC";
-          navbar.style.opacity = 0.9;
-        } else {
-          myButton.style.display = "none";
-          //    navbar.style.background="#008000";
-          navbar.style.opacity = 1;
-        }
-      }
-      //when the user clicks on the button, scroll to the top of the document
-      function topFunction() {
-        document.body.scrollTop = 0; //For Safari;
-        document.documentElement.scrollTop = 0; //For Chrome, FireFox, IE & Opera
-      }
-    </script>
-
+    
     <!-- ionics framework🧮  -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
 
-    <!-- Carousel Slider JS Link -->
-    <script src="./carouselApp.js"></script>
-
-    <!-- Sticky Navigation Bar on Scroll using -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- === Navbar JS Start === -->
 
     <script>
-      $(window).scroll(function () {
-        if ($(window).scrollTop()) {
-          $("header").addClass("changeBackgroundColor");
+      const header = document.querySelector("header");
+      const menuToggle = document.querySelector(".menuToggle");
+
+      /* Toggle menu */
+      menuToggle.addEventListener("click", () => {
+        header.classList.toggle("active");
+      });
+
+      /* Scroll background change */
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("changeBackgroundColor");
         } else {
-          $("header").removeClass("changeBackgroundColor");
+          header.classList.remove("changeBackgroundColor");
+        }
+      });
+
+      /* ===== Active Menu Auto Detect ===== */
+
+      const currentPage = window.location.pathname.split("/").pop();
+      const navLinks = document.querySelectorAll("nav ul li a");
+
+      navLinks.forEach((link) => {
+        const linkPage = link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+          link.parentElement.classList.add("activeName");
         }
       });
     </script>
 
-    <script src="js/home.js"></script>
+    <!-- === Navbar JS End === -->
   </body>
 </html>

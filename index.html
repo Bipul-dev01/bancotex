@@ -37,14 +37,14 @@
 
     <!-- === Top Section Branding End === -->
 
-  <!-- ================= NAVBAR START ================= -->
+    <!-- ================= NAVBAR START ================= -->
     <header class="navbar">
       <div class="brandName">
         <h1>Bancotex</h1>
       </div>
       <nav>
         <ul>
-          <li class="active"><a class="navLink" href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="eidcollection.html">Eid Collection 2026</a></li>
           <li><a href="newarrival.html">New Arrival</a></li>
           <li><a href="panjabi.html">Panjabi</a></li>
@@ -62,7 +62,7 @@
       </div>
     </header>
 
-   <!-- ================= NAVBAR END ================= -->
+    <!-- ================= NAVBAR END ================= -->
 
     <!-- === Slide/Carousel section Start === -->
     <section class="slideshow-container">
@@ -470,8 +470,8 @@
       loaderAnimation();
     </script>
 
+    <!-- === Navbar JS Start === -->
 
-<!-- === Navbar JS Start === -->
     <script>
       const header = document.querySelector("header");
       const menuToggle = document.querySelector(".menuToggle");
@@ -489,10 +489,21 @@
           header.classList.remove("changeBackgroundColor");
         }
       });
+
+      /* ===== Active Menu Auto Detect ===== */
+
+      const currentPage = window.location.pathname.split("/").pop();
+      const navLinks = document.querySelectorAll("nav ul li a");
+
+      navLinks.forEach((link) => {
+        const linkPage = link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+          link.parentElement.classList.add("activeName");
+        }
+      });
     </script>
 
-<!-- === Navbar JS End === -->
-
-
+    <!-- === Navbar JS End === -->
   </body>
 </html>

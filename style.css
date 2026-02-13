@@ -147,7 +147,7 @@ header.navbar nav ul li a:hover {
     color: #fff;
 }
 
-header.navbar nav ul .active a {
+header.navbar nav ul .activeName a {
     font-weight: 600;
 }
 /* Scroll effect */
