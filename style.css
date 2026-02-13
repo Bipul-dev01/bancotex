@@ -1,270 +1,265 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
-body{
-    min-height: 100vh;
+body {
+  min-height: 100vh;
 }
 
-:root{
+:root {
   --transition-3: 1000ms ease;
 }
 
-/* *************************************************************
-    Pre loader
-************************************************************* */
-#loader{
-    height: 100%;
-    width: 100%;
-    background-color: #000;
-    position: fixed;
-    z-index: 9999999999;
-    top: 0;
-    transition: all ease 0.7s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* === PRELOADER CSS START === */
+#loader {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  position: fixed;
+  z-index: 9999999999;
+  top: 0;
+  transition: all ease 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#loader h1{
-    font-size: 5vw;
-    color: transparent;
-    background: linear-gradient(to right,orange,orangered);
-    -webkit-background-clip: text;
-    position: absolute;
-    opacity: 0;
-    animation-name: load;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-timing-function: linear;
+#loader h1 {
+  font-size: 5vw;
+  color: transparent;
+  background: linear-gradient(to right, orange, orangered);
+  -webkit-background-clip: text;
+  position: absolute;
+  opacity: 0;
+  animation-name: load;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
 }
-#loader h1:nth-child(2){
-    animation-delay: 2s;
+#loader h1:nth-child(2) {
+  animation-delay: 2s;
 }
-#loader h1:nth-child(3){
-    animation-delay: 3s;
+#loader h1:nth-child(3) {
+  animation-delay: 3s;
 }
 @keyframes load {
-    0%{
-        opacity: 0;
-    }
-    10%{
-        opacity: 1;
-    }
-    90%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-@media (max-width:600px) {
-    #loader h1{
-        font-size: 9vw;     
-    }
+@media (max-width: 600px) {
+  #loader h1 {
+    font-size: 9vw;
+  }
+}
+/* === PRELOADER CSS END === */
+
+/* === Top Section Branding CSS Start === */
+
+.branding-section {
+  background-color: #131313;
 }
 
-/* Top Section Branding CSS Start */
-
-.branding-section{
-    background-color: #131313;
-}
-
-.branding{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 0;
+.branding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
 }
 
 /* Logo default */
-.branding img{
-    max-height: 120px;   /* desktop */
-    width: auto;
+.branding img {
+  max-height: 120px; /* desktop */
+  width: auto;
 }
 
 /* Tablet */
-@media (max-width: 992px){
-    .branding img{
-        max-height: 100px;
-    }
+@media (max-width: 992px) {
+  .branding img {
+    max-height: 100px;
+  }
 }
 
 /* Mobile */
-@media (max-width: 576px){
-    .branding img{
-        max-height: 80px;
-    }
+@media (max-width: 576px) {
+  .branding img {
+    max-height: 80px;
+  }
 }
 
-/* Top Section Branding CSS End */
-
+/* === Top Section Branding CSS End === */
 
 /* ================= NAVBAR CSS START ================= */
 
 header.navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 58px;
-    background: #C7AD82;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99000;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 58px;
+  background: #c7ad82;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99000;
 }
 
-header.navbar .brandName{
-    display: none;
+header.navbar .brandName {
+  display: none;
 }
-header.navbar .brandName h1{
-    font-size: 25px;
-    font-weight: 500;
-    color: #111;   
+header.navbar .brandName h1 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #111;
 }
 
 header.navbar nav ul {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 header.navbar nav ul li a {
-    display: block;
-    padding: 20px 15px;
-    text-decoration: none;
-    color: #111;
-    font-size: 16px;
-    transition: 0.3s ease;
+  display: block;
+  padding: 20px 15px;
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  transition: 0.3s ease;
 }
 
 header.navbar nav ul li a:hover {
-    background: #2b93e3;
-    color: #fff;
+  background: #2b93e3;
+  color: #fff;
 }
 
 header.navbar nav ul .activeName a {
-    font-weight: 600;
+  font-weight: 600;
 }
 /* Scroll effect */
 
 header.navbar.changeBackgroundColor {
-    background: #ffffff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: 0.3s ease;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
 }
 
 header.navbar.changeBackgroundColor nav ul li a {
-    color: #111;
+  color: #111;
 }
 
 /* ================= HAMBURGER ================= */
 
 .menuToggle {
-    position: absolute;
-    right : 20px;
-    width: 30px;
-    height: 22px;
-    cursor: pointer;
-    display: none;
+  position: absolute;
+  right: 20px;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  display: none;
 }
 
 .menuToggle span,
 .menuToggle::before,
 .menuToggle::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: #111;
-    left: 0;
-    transition: 0.3s ease;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #111;
+  left: 0;
+  transition: 0.3s ease;
 }
 
 .menuToggle span {
-    top: 50%;
-    transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .menuToggle::before {
-    top: 0;
+  top: 0;
 }
 
 .menuToggle::after {
-    bottom: 0;
+  bottom: 0;
 }
 
 /* Cross Animation */
 
 header.active .menuToggle span {
-    opacity: 0;
+  opacity: 0;
 }
 
 header.active .menuToggle::before {
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
 }
 
 header.active .menuToggle::after {
-    bottom: auto;
-    top: 50%;
-    transform: translateY(-50%) rotate(-45deg);
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
-  
-    header.navbar {
-        justify-content: space-between;
-    }
-    header.navbar .brandName{
-      margin-left: 20px;
-      display: block;
-    }
-    header.navbar.changeBackgroundColor nav ul li a {
-      color: #fff;
-    }
+  header.navbar {
+    justify-content: space-between;
+  }
+  header.navbar .brandName {
+    margin-left: 20px;
+    display: block;
+  }
+  header.navbar.changeBackgroundColor nav ul li a {
+    color: #fff;
+  }
 
-    .menuToggle {
-        display: block;
-    }
+  .menuToggle {
+    display: block;
+  }
 
-    header.navbar nav {
-        position: absolute;
-        top: 58px;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        background: #36637b;
-        display: none;
-    }
+  header.navbar nav {
+    position: absolute;
+    top: 58px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #36637b;
+    display: none;
+  }
 
-    header.active nav {
-        display: block;
-    }
+  header.active nav {
+    display: block;
+  }
 
-    header.navbar nav ul {
-        flex-direction: column;
-        padding-top: 20px;
-    }
+  header.navbar nav ul {
+    flex-direction: column;
+    padding-top: 20px;
+  }
 
-    header.navbar nav ul li a {
-        padding: 10px 30px;
-        color: #fff;
-    }
+  header.navbar nav ul li a {
+    padding: 10px 30px;
+    color: #fff;
+  }
 
-    header.navbar nav ul li a:hover {
-        background: #2b93e3;
-    }
+  header.navbar nav ul li a:hover {
+    background: #2b93e3;
+  }
 }
 
 /* ================= NAVBAR CSS END ================= */
-
 
 /* === Fixed Social Icons CSS Start === */
 
@@ -365,9 +360,7 @@ header.active .menuToggle::after {
 }
 /* === Fixed Social Icons CSS End === */
 
-
 /* === Slideshow / Carousel Section CSS Start === */
-
 
 /* ===============================
    SLIDESHOW CONTAINER
@@ -421,8 +414,12 @@ header.active .menuToggle::after {
   transition: 0.3s ease;
 }
 
-.prevv { left: 12px; }
-.nextt { right: 12px; }
+.prevv {
+  left: 12px;
+}
+.nextt {
+  right: 12px;
+}
 
 .prevv:hover,
 .nextt:hover {
@@ -467,8 +464,12 @@ header.active .menuToggle::after {
 }
 
 @keyframes fade {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ===============================
@@ -512,7 +513,6 @@ header.active .menuToggle::after {
 }
 
 /* === Slideshow / Carousel Section CSS End === */
-
 
 /* === Infinite Card Slider CSS Start === */
 
@@ -558,7 +558,7 @@ header.active .menuToggle::after {
   background: #c7ad82;
   color: #111;
   border-radius: 50%;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
   z-index: 1000;
 }
@@ -567,8 +567,12 @@ header.active .menuToggle::after {
   transform: translateY(-50%) scale(0.85);
 }
 
-#left { left: -15px; }
-#right { right: -15px; }
+#left {
+  left: -15px;
+}
+#right {
+  right: -15px;
+}
 
 /* Carousel */
 .wrapper .carousel {
@@ -583,10 +587,20 @@ header.active .menuToggle::after {
 }
 
 /* Hide Scrollbar */
-.carousel::-webkit-scrollbar { display: none; }
-.carousel.no-transition { scroll-behavior: auto; }
-.carousel.dragging { scroll-snap-type: none; scroll-behavior: auto; }
-.carousel.dragging .card { cursor: grab; user-select: none; }
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
 
 /* Card + Image Container */
 .carousel .card {
@@ -599,12 +613,14 @@ header.active .menuToggle::after {
   border-radius: 14px;
   padding: 15px;
   cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .carousel .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
 }
 
 .card .img {
@@ -664,8 +680,13 @@ header.active .menuToggle::after {
 
 /* Mobile */
 @media screen and (max-width: 600px) {
-  .wrapper i { width: 40px; height: 40px; line-height: 40px; font-size: 1.1rem; }
-  
+  .wrapper i {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.1rem;
+  }
+
   .wrapper .carousel {
     grid-auto-columns: 100%; /* 1 card full width */
   }
@@ -674,9 +695,15 @@ header.active .menuToggle::after {
     aspect-ratio: 4 / 5; /* slightly taller for mobile */
   }
 
-  .carousel .card h2 { font-size: 16px; }
-  .carousel .card h4 { font-size: 13px; }
-  .carousel .card h3 { font-size: 15px; }
+  .carousel .card h2 {
+    font-size: 16px;
+  }
+  .carousel .card h4 {
+    font-size: 13px;
+  }
+  .carousel .card h3 {
+    font-size: 15px;
+  }
 }
 
 /* === Infinite Card Slider CSS End === */
@@ -705,11 +732,11 @@ header.active .menuToggle::after {
   content: "";
   flex: 1;
   height: 2px;
-  background-color: #C7AD82;
+  background-color: #c7ad82;
 }
 
 .section-title .light {
-  color: #C7AD82;
+  color: #c7ad82;
   font-weight: 600;
 }
 
@@ -731,7 +758,9 @@ header.active .menuToggle::after {
   position: relative;
   overflow: hidden;
   border-radius: 18px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 /* Image */
@@ -805,8 +834,6 @@ header.active .menuToggle::after {
 
 /* === Shop by Categories CSS End ==== */
 
-
-
 /* E-commerce products css starts */
 
 /* Container */
@@ -837,7 +864,7 @@ header.active .menuToggle::after {
 }
 .big-img img {
   max-width: 100%;
-  height: 480PX;
+  height: 480px;
   /* max-height: 100%; */
   object-fit: contain;
 }
@@ -906,7 +933,6 @@ header.active .menuToggle::after {
 .size-title {
   font-weight: 600;
 }
-
 
 .sizes {
   display: flex;
@@ -982,6 +1008,9 @@ header.active .menuToggle::after {
   .small-img {
     width: 22%;
   }
+  .small-img img {
+    /* height: 120px; */
+  }
   .btn-box {
     flex-direction: column;
     align-items: stretch;
@@ -989,9 +1018,7 @@ header.active .menuToggle::after {
   .btn-box button {
     width: 100%;
   }
-  
 }
-
 
 /* Accordion */
 .accordion {
@@ -1053,7 +1080,6 @@ header.active .menuToggle::after {
 }
 
 /* E-commerce products css ends */
-
 
 /* === Find Your Store Location CSS Start === */
 
@@ -1167,8 +1193,7 @@ header.active .menuToggle::after {
   }
 }
 
- /* === Find Your Store Location CSS End === */
-
+/* === Find Your Store Location CSS End === */
 
 /* === Company Status Section CSS Start === */
 
@@ -1192,7 +1217,9 @@ header.active .menuToggle::after {
   padding: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -1265,7 +1292,7 @@ header.active .menuToggle::after {
   content: "";
   flex: 1;
   height: 2px;
-  background-color: #C7AD82;
+  background-color: #c7ad82;
 }
 
 /* Grid */
@@ -1286,8 +1313,10 @@ header.active .menuToggle::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 /* Image */
@@ -1302,7 +1331,7 @@ header.active .menuToggle::after {
 /* Hover */
 .related-products .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
 }
 
 .related-products .product-card:hover img {
@@ -1364,7 +1393,6 @@ header.active .menuToggle::after {
 }
 
 /* === Contact Us Page Map CSS End === */
-
 
 /* ===== Footer CSS Start ===== */
 
@@ -1475,7 +1503,9 @@ header.active .menuToggle::after {
   border-radius: 50%;
   text-decoration: none;
   font-size: 16px;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
 .footer-socials a:hover {
@@ -1487,7 +1517,7 @@ header.active .menuToggle::after {
 .footer-bottom {
   padding: 15px 80px;
   font-size: 14px;
-  background-color: #C7AD82;
+  background-color: #c7ad82;
 }
 
 .footer-bottom-row {
@@ -1547,143 +1577,142 @@ header.active .menuToggle::after {
 
 /* ===== Footer CSS End ===== */
 
-
 /* === Image Gallery CSS Start === */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-.slidingContaiber{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 10px;
-}
-
-.slidingContaiber .wrapper{
-    max-width: 1100px;
-}
-.slidingContaiber .wrapper .gallery{
-    display: flex;
-    flex-wrap: wrap;
-}
-.gallery span{
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-}
-.gallery .image{
-    /* width: 100%; */
-    width: calc(100% / 3);
-    padding: 7px;
-}
-.slidingContaiber .wrapper .gallery img{
-    width: 100%;
-    vertical-align: middle;
-    transition: all 0.5s ease;
-}
-.slidingContaiber .wrapper .gallery .image:hover img{
-    transform: scale(1.2);
+.slidingContaiber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
 }
 
-@media (max-width : 1000px){
-    .gallery .image{
-        width: calc(100% / 2);
-    }
+.slidingContaiber .wrapper {
+  max-width: 1100px;
 }
-@media (max-width : 600px){
-    .gallery .image{
-        padding: 4px;
-        width: 100% ;
-    }
+.slidingContaiber .wrapper .gallery {
+  display: flex;
+  flex-wrap: wrap;
 }
-.preview-box{
-    position: fixed;
-    max-width: 460px;
-    height: 640px;
-    width: 100%;
-    top: 49%;
-    left: 50%;
-    z-index: 9999999;
-    transform: translate(-50%, -50%) scale(0.9);
-    background: #fff;
-    padding: 0 5px 5px 5px;
-    opacity: 0;
-    pointer-events: none;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.gallery span {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
 }
-.preview-box.show{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-    transition: all 0.3s ease;
+.gallery .image {
+  /* width: 100%; */
+  width: calc(100% / 3);
+  padding: 7px;
 }
-.preview-box .details{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 15px 12px 10px;
+.slidingContaiber .wrapper .gallery img {
+  width: 100%;
+  vertical-align: middle;
+  transition: all 0.5s ease;
 }
-.preview-box .details .icon{
-    color: #007bff;
-    cursor: pointer;
-    font-size: 23px;
-}
-.details .title{
-    display: flex;
-    font-size: 18px;
-    font-weight: 400;
-}
-.details .title p{
-    margin: 0 5px;
-}
-.details .title p.current-img{
-    font-weight: 600;
-}
-.preview-box .image-box{
-    display: flex;
-    width: 100%;
-    /* height: 720px; */
-}
-.image-box .slide{
-    position: absolute;
-    top: 50%;
-    z-index: 3;
-    transform: translateY(-50%);
-    font-size: 37px;
-    text-shadow: 2px 2px 4px #fff;
-    cursor: pointer;
-    color: #111;
-    width: 60px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-}
-.image-box .slide.prev{
-    left: 0;
-}
-.image-box .slide.next{
-    right: 0;
-}
-.preview-box .image-box img{
-    width: 100%;
-    border-radius: 0 0 3px 3px;
+.slidingContaiber .wrapper .gallery .image:hover img {
+  transform: scale(1.2);
 }
 
-.shadow{
-    position: fixed;
-    top: 0;
-    left: 0;
+@media (max-width: 1000px) {
+  .gallery .image {
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 600px) {
+  .gallery .image {
+    padding: 4px;
     width: 100%;
-    height: 100%;
-    display: none;
-    background: rgba(0,0,0,0.4);
+  }
+}
+.preview-box {
+  position: fixed;
+  max-width: 460px;
+  height: 640px;
+  width: 100%;
+  top: 49%;
+  left: 50%;
+  z-index: 9999999;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: #fff;
+  padding: 0 5px 5px 5px;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.preview-box.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.3s ease;
+}
+.preview-box .details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px 12px 10px;
+}
+.preview-box .details .icon {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 23px;
+}
+.details .title {
+  display: flex;
+  font-size: 18px;
+  font-weight: 400;
+}
+.details .title p {
+  margin: 0 5px;
+}
+.details .title p.current-img {
+  font-weight: 600;
+}
+.preview-box .image-box {
+  display: flex;
+  width: 100%;
+  /* height: 720px; */
+}
+.image-box .slide {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  font-size: 37px;
+  text-shadow: 2px 2px 4px #fff;
+  cursor: pointer;
+  color: #111;
+  width: 60px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.image-box .slide.prev {
+  left: 0;
+}
+.image-box .slide.next {
+  right: 0;
+}
+.preview-box .image-box img {
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /* === Image Gallery CSS End === */
