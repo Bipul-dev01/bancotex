@@ -198,5 +198,42 @@ Visit our showrooms to experience the elegance of Bancotex Global—where qualit
       </div>
     </div>
     <!-- Footer End -->
+
+
+    <!-- === Navbar JS Start === -->
+
+    <script>
+      const header = document.querySelector("header");
+      const menuToggle = document.querySelector(".menuToggle");
+
+      /* Toggle menu */
+      menuToggle.addEventListener("click", () => {
+        header.classList.toggle("active");
+      });
+
+      /* Scroll background change */
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("changeBackgroundColor");
+        } else {
+          header.classList.remove("changeBackgroundColor");
+        }
+      });
+
+      /* ===== Active Menu Auto Detect ===== */
+
+      const currentPage = window.location.pathname.split("/").pop();
+      const navLinks = document.querySelectorAll("nav ul li a");
+
+      navLinks.forEach((link) => {
+        const linkPage = link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+          link.parentElement.classList.add("activeName");
+        }
+      });
+    </script>
+
+    <!-- === Navbar JS End === -->
   </body>
 </html>
