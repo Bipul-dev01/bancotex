@@ -656,7 +656,8 @@ header.active .menuToggle::after {
   font-weight: 400;
   font-size: 14px;
   color: #666;
-  margin: 0 0 3px;
+  margin: 0 0 1px;
+  margin-bottom: -10px;
   text-align: center;
 }
 
@@ -919,6 +920,21 @@ header.active .menuToggle::after {
   font-weight: 600;
   color: #c7ad82;
   margin: 15px 0;
+}
+.product-price span{
+  padding-right: 10px;
+}
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 16px;
+  padding-bottom: 50px;
+}
+
+.new-price {
+  color: #c7ad82;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .product-color {
