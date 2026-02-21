@@ -657,7 +657,7 @@ header.active .menuToggle::after {
   font-size: 14px;
   color: #666;
   margin: 0 0 1px;
-  margin-bottom: -10px;
+  margin-bottom: -8px;
   text-align: center;
 }
 
@@ -916,6 +916,31 @@ header.active .menuToggle::after {
 }
 
 .product-price {
+  margin: 15px 0;
+}
+
+.regular-price {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.discount-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #888;
+}
+
+.new-price {
+  color: #c7ad82;
+}
+
+/* .product-price {
   font-size: 20px;
   font-weight: 600;
   color: #c7ad82;
@@ -935,7 +960,7 @@ header.active .menuToggle::after {
   color: #c7ad82;
   font-size: 18px;
   font-weight: 700;
-}
+} */
 
 .product-color {
   margin-bottom: 20px;
